@@ -1,0 +1,24 @@
+---
+import Navbar from "./Navbar.astro";
+import ExternalLink from "./svgs/ExternalLink.astro";
+
+const navbarOptions = [
+  { label: "Home", href: "/" },
+  { label: "My Experience", href: "/my-experience" },
+  { label: "About", href: "/about" },
+  { label: "Tech Stack", href: "/tech-stack" },
+  { label: "Let's Talk", href: "/contact", icon: ExternalLink },
+];
+---
+
+<header>
+  <Navbar options={navbarOptions} />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+import type { NavbarOption } from "./types";
+
+type Props = {
+  options: NavbarOption[];
+};
+
+const { options } = Astro.props;
+---
+
+<nav>
+  <ul>
+    {
+      options.map((option) => {
+        return (
+          <li>
+            {option.icon ? (
+              <a class="filled" href={option.href}>
+                <span>{option.label}</span>
+                <option.icon color="var(--background)" />
+              </a>
+            ) : (
+              <a href={option.href}>{option.label}</a>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0.25rem;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+
+    border-radius: 100px;
+    border: 1px solid var(--light-15);
+    background-color: var(--light-10);
+  }
+
+  li {
+    margin: 0;
+  }
+
+  li a {
+    display: flex;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .filled {
+    background-color: white;
+    border-radius: 100px;
+    color: var(--background);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
