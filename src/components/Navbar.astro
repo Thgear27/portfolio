@@ -8,28 +8,99 @@ type Props = {
 const { options } = Astro.props;
 ---
 
-<nav>
-  <ul>
-    {
-      options.map((option) => {
-        return (
-          <li>
-            {option.icon ? (
-              <a class="filled" href={option.href}>
-                <span>{option.label}</span>
-                <option.icon color="var(--background)" />
-              </a>
-            ) : (
-              <a href={option.href}>{option.label}</a>
-            )}
-          </li>
-        );
-      })
-    }
-  </ul>
-</nav>
+<div class="wrapper">
+  <div class="mobile-button">
+    <input type="checkbox" id="nav-toggle" />
+    <label for="nav-toggle">
+      <div class="humbuguer-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </label>
+  </div>
+
+  <nav>
+    <ul>
+      {
+        options.map((option) => {
+          return (
+            <li>
+              {option.icon ? (
+                <a class="filled" href={option.href}>
+                  <span>{option.label}</span>
+                  <option.icon color="var(--background)" />
+                </a>
+              ) : (
+                <a href={option.href}>{option.label}</a>
+              )}
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</div>
 
 <style>
+  #nav-toggle {
+    display: none;
+  }
+
+  .mobile-button {
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .humbuguer-icon {
+    display: block;
+    position: relative;
+    height: 24px;
+    width: 30px;
+  }
+
+  .humbuguer-icon span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: var(--light-90);
+    border-radius: 10px;
+    transition:
+      top 0.2s ease-in-out,
+      left 0.2s ease-in-out,
+      width 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+  }
+
+  .humbuguer-icon span:nth-child(1) {
+    left: 0;
+    top: 0;
+  }
+
+  .humbuguer-icon span:nth-child(2) {
+    top: 11px;
+  }
+
+  .humbuguer-icon span:nth-child(3) {
+    top: 22px;
+  }
+
+  #nav-toggle:checked + label .humbuguer-icon span:nth-child(3) {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
+  #nav-toggle:checked + label .humbuguer-icon span:nth-child(2) {
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+
+  #nav-toggle:checked + label .humbuguer-icon span:nth-child(1) {
+    width: 0;
+    top: 10px;
+    left: 50%;
+  }
+
   ul {
     list-style: none;
     padding: 0.25rem;
@@ -49,10 +120,11 @@ const { options } = Astro.props;
   li a {
     display: flex;
     font-weight: 600;
-    padding: 0.5rem 0.75rem;
+    padding: 0.25rem 0.75rem;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    text-wrap: nowrap;
   }
 
   .filled {
@@ -65,5 +137,15 @@ const { options } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+    }
+
+    .mobile-button {
+      display: block;
+    }
   }
 </style>

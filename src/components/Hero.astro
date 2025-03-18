@@ -1,0 +1,94 @@
+---
+import LinkedInLogo from "./svgs/social/LinkedInLogo.astro";
+import GitHubLogo from "./svgs/social/GitHubLogo.astro";
+import EmailLogo from "./svgs/social/EmailLogo.astro";
+---
+
+<section>
+  <div class="content wrapper">
+    <div class="title">
+      <h1>Hello, I'm <span class="gradient">Fernando</span></h1>
+      <p class="subtitle">Web Developer - Problem Solver</p>
+    </div>
+    <p class="text">
+      I build
+      <span class="highlight">fast</span>,
+      <span class="highlight">modern</span>, and
+      <span class="highlight">user-friendly</span> web experiences. Passionate about clean code, performance, and crafting
+      digital solutions that make an impact.
+    </p>
+    <div class="social-links">
+      <a href="#"><LinkedInLogo color="var(--light-90)" /><span>LinkedIn</span></a>
+      <a href="#"><GitHubLogo color="var(--light-90)" /><span>GitHub</span></a>
+      <a href="#"><EmailLogo color="var(--light-90)" /><span>Email me</span></a>
+    </div>
+
+    <div class="circle-gradient"></div>
+  </div>
+</section>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  section {
+    padding: 9rem 0;
+    position: relative;
+  }
+
+  .subtitle {
+    color: var(--light-70);
+  }
+
+  .text {
+    font-size: 1.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 4px 16px;
+    border: 1px solid var(--light-30);
+    border-radius: 100px;
+    color: var(--light-90);
+  }
+
+  .social-links a :global(svg) {
+    height: 15px;
+    width: 15px;
+  }
+
+  .social-links span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .circle-gradient {
+    --width: 1000px;
+    --height: 1000px;
+
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+
+    right: calc(var(--width) / -2);
+    /* left: calc(var(--width) / -2); */
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: -1;
+    background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 20%, rgba(0, 0, 0, 0) 70%);
+  }
+</style>

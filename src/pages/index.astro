@@ -1,10 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Header from "@components/Header.astro";
+import Hero from "@components/Hero.astro";
 ---
 
 <Layout>
-  <main class="wrapper">
+  <main>
     <Header />
+    <Hero />
   </main>
 </Layout>
+
+<style>
+  main {
+    overflow-x: hidden;
+  }
+</style>

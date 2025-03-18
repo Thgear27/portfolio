@@ -11,8 +11,11 @@
 :root {
   --background: hsl(204, 67%, 9%);
   --light-100: hsl(0, 0%, 100%);
+  --light-90: hsl(0, 0%, 100%, 0.9);
+  --light-70: hsl(0, 0%, 100%, 0.7);
+  --light-30: hsl(0, 0%, 100%, 0.3);
   --light-15: hsl(0, 0%, 100%, 0.15);
-  --light-10: hsl(0, 0%, 100%, 0.10);
+  --light-10: hsl(0, 0%, 100%, 0.1);
 
   --primary-400: hsl(98, 93%, 82%);
 
@@ -34,7 +37,7 @@
   --header-h2: 2rem;
   --header-h3: 1.75rem;
 
-  --text: var(--light-100);
+  --text: var(--light-90);
 
   --button-text: 0.75rem;
   --link-text: 1rem;
@@ -84,9 +87,26 @@ img {
 }
 
 .wrapper {
-  max-width: 1120px;
+  max-width: 1024px;
   margin: 0 auto;
   width: 100%;
+}
+
+.gradient {
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: inherit;
+  font-family: inherit;
+  display: inline;
+}
+
+.highlight {
+  color: var(--primary-400);
+  font-weight: 600;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 a,
@@ -201,6 +221,10 @@ input:focus {
 @container wrapper (max-width: 768px) {
   .wrapper {
     padding: 0 20px;
+  }
+
+  body {
+    font-size: 14px;
   }
 }
 
