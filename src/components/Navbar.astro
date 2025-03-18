@@ -11,7 +11,7 @@ const { options } = Astro.props;
 <div class="wrapper">
   <div class="mobile-button">
     <input type="checkbox" id="nav-toggle" />
-    <label for="nav-toggle">
+    <label for="nav-toggle" id="nav-toggle-button">
       <div class="humbuguer-icon">
         <span></span>
         <span></span>
@@ -29,7 +29,7 @@ const { options } = Astro.props;
               {option.icon ? (
                 <a class="filled" href={option.href}>
                   <span>{option.label}</span>
-                  <option.icon color="var(--background)" />
+                  <option.icon color="var(--background-400)" />
                 </a>
               ) : (
                 <a href={option.href}>{option.label}</a>
@@ -42,6 +42,15 @@ const { options } = Astro.props;
   </nav>
 </div>
 
+<script>
+  const navToggleLabel = document.getElementById("nav-toggle-button");
+  const nav = document.querySelector("nav");
+
+  navToggleLabel?.addEventListener("click", () => {
+    nav?.classList.toggle("open");
+  });
+</script>
+
 <style>
   #nav-toggle {
     display: none;
@@ -50,6 +59,7 @@ const { options } = Astro.props;
   .mobile-button {
     display: none;
     padding: 1rem 0;
+    position: relative;
   }
 
   .humbuguer-icon {
@@ -107,10 +117,11 @@ const { options } = Astro.props;
     margin: 0;
     display: flex;
     gap: 1rem;
-
+    background-color: #1e303b;
     border-radius: 100px;
     border: 1px solid var(--light-15);
-    background-color: var(--light-10);
+
+    transition: transform 0.2s ease-in-out;
   }
 
   li {
@@ -130,7 +141,7 @@ const { options } = Astro.props;
   .filled {
     background-color: white;
     border-radius: 100px;
-    color: var(--background);
+    color: var(--background-400);
   }
 
   nav {
@@ -140,12 +151,49 @@ const { options } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    ul {
-      display: none;
+    .mobile-button {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 950;
     }
 
-    .mobile-button {
-      display: block;
+    nav {
+      position: fixed;
+      width: 80%;
+      top: 0;
+      right: 0;
+      z-index: 900;
+      transition: transform 0.2s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    nav.open {
+      transform: translateX(0);
+    }
+
+    ul {
+      padding: 0;
+      padding-top: 88px;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      height: 100vh;
+      border-radius: 0;
+      border: none;
+      gap: 0;
+    }
+
+    li {
+      width: 100%;
+      border-bottom: 1px solid var(--light-15);
+    }
+
+    li a {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      justify-content: start;
+      border-radius: 0;
     }
   }
 </style>

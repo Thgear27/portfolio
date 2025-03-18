@@ -1,7 +1,11 @@
 ---
-import LinkedInLogo from "./svgs/social/LinkedInLogo.astro";
-import GitHubLogo from "./svgs/social/GitHubLogo.astro";
-import EmailLogo from "./svgs/social/EmailLogo.astro";
+import type { SocialLink } from "./types";
+
+export type Props = {
+  socialLinks: SocialLink[];
+};
+
+const { socialLinks } = Astro.props;
 ---
 
 <section>
@@ -18,9 +22,16 @@ import EmailLogo from "./svgs/social/EmailLogo.astro";
       digital solutions that make an impact.
     </p>
     <div class="social-links">
-      <a href="#"><LinkedInLogo color="var(--light-90)" /><span>LinkedIn</span></a>
-      <a href="#"><GitHubLogo color="var(--light-90)" /><span>GitHub</span></a>
-      <a href="#"><EmailLogo color="var(--light-90)" /><span>Email me</span></a>
+      {
+        socialLinks.map((link) => {
+          return (
+            <a href={link.href} target="_blank">
+              <link.icon color="var(--light-90)" />
+              <span>{link.label}</span>
+            </a>
+          );
+        })
+      }
     </div>
 
     <div class="circle-gradient"></div>

@@ -2,12 +2,37 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Hero from "@components/Hero.astro";
+import EmailLogo from "@components/svgs/social/EmailLogo.astro";
+import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
+import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
+
+import type { SocialLink } from "@components/types";
+
+const socialLinks: SocialLink[] = [
+  {
+    href: "https://www.linkedin.com/in/thgear27/",
+    icon: LinkedInLogo,
+    label: "LinkedIn",
+  },
+
+  {
+    href: "https://github.com/Thgear27",
+    icon: GitHubLogo,
+    label: "GitHub",
+  },
+
+  {
+    href: "#",
+    icon: EmailLogo,
+    label: "Email me",
+  },
+];
 ---
 
 <Layout>
   <main>
     <Header />
-    <Hero />
+    <Hero {socialLinks} />
   </main>
 </Layout>
 
