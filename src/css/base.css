@@ -129,7 +129,7 @@ img {
   transform: translateY(-50%);
 
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .circle-gradient-left {

@@ -1,5 +1,6 @@
 ---
 import Briefcase from "./svgs/Briefcase.astro";
+import SectionTitle from "./ui/SectionTitle.astro";
 import type { JobInfo } from "./types";
 
 type Props = {
@@ -11,10 +12,7 @@ const { jobs } = Astro.props;
 
 <section id="my-experience">
   <div class="content wrapper">
-    <div class="title">
-      <h2><span class="gradient">My Experience</span></h2>
-      <p>Where I have Been Employed</p>
-    </div>
+    <SectionTitle title="My Experience" subtitle="Where I have been employed" />
 
     <div class="list">
       {
@@ -34,12 +32,14 @@ const { jobs } = Astro.props;
               </div>
               <div class="job-description">
                 <p>{job.description}</p>
-                {job.workTeamates && (
+                {job.workTeammates && (
                   <>
                     <span class="italic">~ collaborated</span>
                     <div class="profile-photos">
-                      {job.workTeamates.map((teamate) => (
-                        <img src={teamate.imgURL} alt={teamate.name} />
+                      {job.workTeammates.map((teammate) => (
+                        <a href={teammate.linkedInUrl} target="_blank">
+                          <img src={teammate.imgURL} alt={teammate.name} />
+                        </a>
                       ))}
                     </div>
                   </>
@@ -65,28 +65,7 @@ const { jobs } = Astro.props;
   .content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 4rem;
-  }
-
-  .title h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
-  }
-
-  .title p {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 90%;
-    text-align: center;
+    gap: 4rem;
   }
 
   .job {

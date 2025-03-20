@@ -1,0 +1,69 @@
+---
+import SectionTitle from "./ui/SectionTitle.astro";
+
+type Props = {
+  paragraphs: string[];
+};
+
+const { paragraphs } = Astro.props;
+---
+
+<section id="about">
+  <div class="content wrapper">
+    <SectionTitle title="About Me" subtitle="Who Am I?" align="left" />
+
+    <div class="info">
+      <div class="about-text">
+        {
+          paragraphs.map((paragraph) => {
+            const parseText = (text: string) => {
+              const parts = text.split(/(\*[^*]+\*)/g); // Split by words enclosed in *
+
+              return parts.map((part) => {
+                if (part.startsWith("*") && part.endsWith("*")) {
+                  return <span class="highlight">{part.slice(1, -1)}</span>;
+                }
+                return part;
+              });
+            };
+            return <p>{parseText(paragraph)}</p>;
+          })
+        }
+      </div>
+      <img src="/imgs/profilephoto.jpeg" alt="" />
+    </div>
+
+    <div class="circle-gradient-right"></div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 4rem 0;
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-text > p + p {
+    margin-top: 1rem;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .info img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 1px 6px 31px -3px rgba(0, 0, 0, 0.3);
+    transform: rotate(2deg);
+  }
+</style>

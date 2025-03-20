@@ -8,5 +8,5 @@ export type JobInfo = {
   date: string;
   location: string;
   description: string;
-  workTeamates?: { name: string; imgURL: string }[];
+  workTeammates?: { name: string; imgURL: string; linkedInUrl: string }[];
 };
