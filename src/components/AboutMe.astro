@@ -39,7 +39,7 @@ const { paragraphs } = Astro.props;
 
 <style>
   section {
-    padding: 4rem 0;
+    padding: var(--section-spacing) 0;
     position: relative;
   }
 
@@ -65,5 +65,18 @@ const { paragraphs } = Astro.props;
     border-radius: 8px;
     box-shadow: 1px 6px 31px -3px rgba(0, 0, 0, 0.3);
     transform: rotate(2deg);
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      flex-direction: column-reverse;
+
+      gap: 1rem;
+    }
+
+    .info img {
+      transform: rotate(0deg);
+      border-radius: 100%;
+    }
   }
 </style>

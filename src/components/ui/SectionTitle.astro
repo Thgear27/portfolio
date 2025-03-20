@@ -3,12 +3,24 @@ type Props = {
   title: string;
   subtitle: string;
   align?: "center" | "left" | "right";
+  mobileAlign?: "center" | "left" | "right";
 };
 
-const { title, subtitle, align } = Astro.props;
+const { title, subtitle, align, mobileAlign = "left" } = Astro.props;
 ---
 
-<div class="title" class:list={[{ left: align === "left", right: align === "right" }]}>
+<div
+  class="title"
+  class:list={[
+    {
+      left: align === "left",
+      right: align === "right",
+      "m-left": mobileAlign === "left",
+      "m-right": mobileAlign === "right",
+      "m-center": mobileAlign === "center",
+    },
+  ]}
+>
   <h2><span class="gradient">{title}</span></h2>
   <p>{subtitle}</p>
 </div>
@@ -40,5 +52,31 @@ const { title, subtitle, align } = Astro.props;
 
   .title.right {
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .title.m-center {
+      align-items: center;
+    }
+
+    .title.m-center p {
+      text-align: center;
+    }
+
+    .title.m-left {
+      align-items: flex-start;
+    }
+
+    .title.m-left p {
+      text-align: left;
+    }
+
+    .title.m-right {
+      align-items: flex-end;
+    }
+
+    .title.m-right p {
+      text-align: right;
+    }
   }
 </style>

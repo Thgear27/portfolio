@@ -58,14 +58,14 @@ const { jobs } = Astro.props;
 
 <style>
   section {
-    padding: 4rem 0;
+    padding: var(--section-spacing) 0;
     position: relative;
   }
 
   .content {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: var(--section-spacing);
   }
 
   .job {
