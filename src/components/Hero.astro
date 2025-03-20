@@ -33,9 +33,9 @@ const { socialLinks } = Astro.props;
         })
       }
     </div>
-
-    <div class="circle-gradient"></div>
   </div>
+
+  <div class="circle-gradient-right"></div>
 </section>
 
 <style>
@@ -51,7 +51,7 @@ const { socialLinks } = Astro.props;
   }
 
   .subtitle {
-    color: var(--light-70);
+    color: var(--light-80);
   }
 
   .text {
@@ -84,22 +84,5 @@ const { socialLinks } = Astro.props;
   .social-links span {
     font-size: 1rem;
     font-weight: 400;
-  }
-
-  .circle-gradient {
-    --width: 1000px;
-    --height: 1000px;
-
-    width: var(--width);
-    height: var(--height);
-    position: absolute;
-
-    right: calc(var(--width) / -2);
-    /* left: calc(var(--width) / -2); */
-    top: 50%;
-    transform: translateY(-50%);
-
-    z-index: -1;
-    background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 20%, rgba(0, 0, 0, 0) 70%);
   }
 </style>

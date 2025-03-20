@@ -11,8 +11,10 @@
 :root {
   --light-100: hsl(0, 0%, 100%);
   --light-90: hsl(0, 0%, 100%, 0.9);
+  --light-80: hsl(0, 0%, 100%, 0.8);
   --light-70: hsl(0, 0%, 100%, 0.7);
   --light-30: hsl(0, 0%, 100%, 0.3);
+  --light-20: hsl(0, 0%, 100%, 0.2);
   --light-15: hsl(0, 0%, 100%, 0.15);
   --light-10: hsl(0, 0%, 100%, 0.1);
 
@@ -89,7 +91,7 @@ img {
 }
 
 .wrapper {
-  max-width: 1024px;
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
 }
@@ -109,6 +111,48 @@ img {
   font-weight: 600;
   font-size: inherit;
   font-family: inherit;
+}
+
+.circle-gradient-right {
+  --width: 1200px;
+  --height: 1200px;
+
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+
+  right: calc(var(--width) / -2);
+  /* left: calc(var(--width) / -2); */
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.circle-gradient-left {
+  --width: 1200px;
+  --height: 1200px;
+
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+
+  /* right: calc(var(--width) / -2); */
+  left: calc(var(--width) / -2);
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.line-break {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--light-15), rgba(0, 0, 0, 0));
 }
 
 a,
@@ -194,7 +238,7 @@ input:focus {
   font-size: var(--bold-body);
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 900px) {
   .wrapper {
     max-width: 100%;
     padding: 0 40px;
