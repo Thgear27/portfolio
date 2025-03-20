@@ -9,7 +9,7 @@ type Props = {
 const { jobs } = Astro.props;
 ---
 
-<section>
+<section id="my-experience">
   <div class="content wrapper">
     <div class="title">
       <h2><span class="gradient">My Experience</span></h2>
@@ -85,6 +85,8 @@ const { jobs } = Astro.props;
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
+    line-height: 90%;
+    text-align: center;
   }
 
   .job {
@@ -139,4 +141,11 @@ const { jobs } = Astro.props;
   /* .job > * {
     border: 1px solid red;
   } */
+
+  @media (max-width: 768px) {
+    .job {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
 </style>
