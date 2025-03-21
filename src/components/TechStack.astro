@@ -1,0 +1,23 @@
+---
+import SectionTitle from "./ui/SectionTitle.astro";
+---
+
+<section id="tech-stack">
+  <div class="content wrapper">
+    <SectionTitle title="Tech Stack" subtitle="Technologies I've been using" />
+    <div class="circle-gradient-left"></div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: var(--section-spacing) 0;
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-spacing);
+  }
+</style>
