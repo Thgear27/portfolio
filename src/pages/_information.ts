@@ -1,6 +1,23 @@
 import EmailLogo from "@components/svgs/social/EmailLogo.astro";
 import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
+import AstroIcon from "@components/svgs/tech/AstroIcon.astro";
+import CssIcon from "@components/svgs/tech/CssIcon.astro";
+import DockerIcon from "@components/svgs/tech/DockerIcon.astro";
+import ExpressIcon from "@components/svgs/tech/ExpressIcon.astro";
+import FigmaIcon from "@components/svgs/tech/FigmaIcon.astro";
+import HtmlIcon from "@components/svgs/tech/HtmlIcon.astro";
+import JavascriptIcon from "@components/svgs/tech/JavascriptIcon.astro";
+import LinuxIcon from "@components/svgs/tech/LinuxIcon.astro";
+import NextIcon from "@components/svgs/tech/NextIcon.astro";
+import PnpmIcon from "@components/svgs/tech/PnpmIcon.astro";
+import PostgresIcon from "@components/svgs/tech/PostgresIcon.astro";
+import ReactIcon from "@components/svgs/tech/ReactIcon.astro";
+import SupabaseIcon from "@components/svgs/tech/SupabaseIcon.astro";
+import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
+import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
+import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
+import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
 import type { JobInfo, SocialLink } from "@components/types";
 
 export const socialLinks: SocialLink[] = [
@@ -59,4 +76,102 @@ export const aboutParagraphs = [
   "I'm passionate about coding, fascinated by the way software interacts with hardware. My journey started with *C*, *C++*, and *Assembly*, where I gained a *solid grasp* of memory management, pointers, and system architecture. These low-level languages taught me to think critically about performance and efficiency.",
   "When I transitioned to *JavaScript*, I was intrigued by its quirks—its asynchronous nature, prototypal inheritance, and event-driven architecture. Determined to master it, I explored its internals, from lexical scope and closures to the intricacies of the event loop.",
   "I love building *efficient*, *scalable*, and *maintainable* solutions. To me, coding is more than just writing functions—it's about crafting seamless user experiences and architecting systems that stand the test of time.",
+];
+
+export const techStack = [
+  {
+    category: "Frontend",
+    techs: [
+      {
+        name: "HTML",
+        icon: HtmlIcon,
+      },
+      {
+        name: "CSS",
+        icon: CssIcon,
+      },
+      {
+        name: "JavaScript",
+        icon: JavascriptIcon,
+      },
+      {
+        name: "Tailwind",
+        icon: TailwindIcon,
+      },
+      {
+        name: "Astro",
+        icon: AstroIcon,
+      },
+      {
+        name: "Svelte",
+        icon: SvelteIcon,
+      },
+      {
+        name: "React",
+        icon: ReactIcon,
+      },
+      {
+        name: "Next.js",
+        icon: NextIcon,
+      },
+    ],
+  },
+  {
+    category: "Backend",
+    techs: [
+      {
+        name: "Node.js",
+        icon: AstroIcon,
+      },
+      {
+        name: "Express",
+        icon: ExpressIcon,
+      },
+      {
+        name: "Supabase",
+        icon: SupabaseIcon,
+      },
+      {
+        name: "TypeScript",
+        icon: TypescriptIcon,
+      },
+      {
+        name: "PostgreSQL",
+        icon: PostgresIcon,
+      },
+    ],
+  },
+  {
+    category: "Tools",
+    techs: [
+      {
+        name: "Git",
+        icon: AstroIcon,
+      },
+      {
+        name: "GitHub",
+        icon: AstroIcon,
+      },
+      {
+        name: "Figma",
+        icon: FigmaIcon,
+      },
+      {
+        name: "VS Code",
+        icon: VscodeIcon,
+      },
+      {
+        name: "pnpm",
+        icon: PnpmIcon,
+      },
+      {
+        name: "Docker",
+        icon: DockerIcon,
+      },
+      {
+        name: "Linux",
+        icon: LinuxIcon,
+      },
+    ],
+  },
 ];
