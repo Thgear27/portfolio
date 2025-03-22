@@ -1,3 +1,11 @@
+---
+type Props = {
+  email: string;
+};
+
+const { email } = Astro.props;
+---
+
 <section>
   <div class="content wrapper">
     <div class="box">
@@ -7,8 +15,8 @@
       </div>
 
       <div class="contact-button">
-        <a href="mailto:vegasfernando2003@gmail.com?subject=Hello Fernando!, I would like to work with you">
-          Send me an email
+        <a href={`mailto:${email}?subject=Hello Fernando!, I would like to work with you`}>
+          <span>Send me an email</span>
         </a>
       </div>
     </div>
@@ -61,6 +69,11 @@
     font-weight: 500;
     text-decoration: none;
     text-wrap: nowrap;
+  }
+
+  .contact-button a {
+    display: flex;
+    gap: 0.5rem;
   }
 
   @media (max-width: 600px) {

@@ -35,13 +35,9 @@ export const socialLinks: SocialLink[] = [
     icon: GitHubLogo,
     label: "GitHub",
   },
-  {
-    href: "mailto:vegasfernando2003@gmail.com?subject=Hello Fernando!, I would like to work with you",
-    icon: EmailLogo,
-    label: "Email me",
-    target: "_self",
-  },
 ];
+
+export const email = "vegasfernando2003@gmail.com";
 
 export const jobs: JobInfo[] = [
   {

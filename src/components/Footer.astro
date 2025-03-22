@@ -1,0 +1,42 @@
+---
+import { socialLinks } from "src/pages/_information";
+import type { SocialLink } from "./types";
+
+export type Props = {
+  socialLinks: SocialLink[];
+};
+---
+
+<section class="wrapper">
+  <div class="line-break"></div>
+  <div class="footer-content">
+    <div>© 2025 Fernando Vegas</div>
+    <div class="social">
+      {
+        socialLinks.map((link) => {
+          return (
+            <a href={link.href} target={link.target ? link.target : "_blank"} rel="noopener noreferrer">
+              <link.icon color="var(--light-90)" />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .social a :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+  }
+</style>

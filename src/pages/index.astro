@@ -6,18 +6,20 @@ import Experience from "@components/Experience.astro";
 import AboutMe from "@components/AboutMe.astro";
 import TechStack from "@components/TechStack.astro";
 import CallToAction from "@components/CallToAction.astro";
+import Footer from "@components/Footer.astro";
 
-import { aboutParagraphs, jobs, socialLinks, techStackInfo } from "./_information";
+import { aboutParagraphs, jobs, socialLinks, techStackInfo, email } from "./_information";
 ---
 
 <Layout>
   <main>
     <Header />
-    <Hero {socialLinks} />
+    <Hero {socialLinks} {email} />
     <Experience {jobs} />
     <AboutMe paragraphs={aboutParagraphs} />
     <TechStack {techStackInfo} />
-    <CallToAction />
+    <CallToAction {email} />
+    <Footer {socialLinks} />
   </main>
 </Layout>
 

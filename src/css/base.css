@@ -159,7 +159,7 @@ img {
 .line-break {
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--light-15), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--light-30), rgba(0, 0, 0, 0));
 }
 
 a,
