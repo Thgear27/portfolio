@@ -1,4 +1,6 @@
 ---
+import Arrow from "./svgs/Arrow.astro";
+
 type Props = {
   email: string;
 };
@@ -17,6 +19,7 @@ const { email } = Astro.props;
       <div class="contact-button">
         <a href={`mailto:${email}?subject=Hello Fernando!, I would like to work with you`}>
           <span>Send me an email</span>
+          <Arrow color="var(--light-90)" />
         </a>
       </div>
     </div>
@@ -73,6 +76,7 @@ const { email } = Astro.props;
 
   .contact-button a {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
   }
 
