@@ -1,14 +1,12 @@
 ---
 import Navbar from "./Navbar.astro";
-import ExternalLink from "./svgs/ExternalLink.astro";
+import type { NavbarOption } from "./types";
 
-const navbarOptions = [
-  { label: "Home", href: "#home" },
-  { label: "My Experience", href: "#my-experience" },
-  { label: "About", href: "#about" },
-  { label: "Tech Stack", href: "#tech-stack" },
-  { label: "Let's Talk", href: "#contact", icon: ExternalLink },
-];
+type Props = {
+  navbarOptions: NavbarOption[];
+};
+
+const { navbarOptions } = Astro.props;
 ---
 
 <header>

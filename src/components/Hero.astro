@@ -1,11 +1,13 @@
 ---
+import EmailLogo from "./svgs/social/EmailLogo.astro";
 import type { SocialLink } from "./types";
 
 export type Props = {
   socialLinks: SocialLink[];
+  email: string;
 };
 
-const { socialLinks } = Astro.props;
+const { socialLinks, email } = Astro.props;
 ---
 
 <section id="home">
@@ -25,13 +27,18 @@ const { socialLinks } = Astro.props;
       {
         socialLinks.map((link) => {
           return (
-            <a href={link.href} target="_blank">
+            <a href={link.href} target={link.target ? link.target : "_blank"} rel="noopener noreferrer">
               <link.icon color="var(--light-90)" />
               <span>{link.label}</span>
             </a>
           );
         })
       }
+
+      <a href={`mailto:${email}?subject=Hello Fernando!, I would like to work with you`}>
+        <EmailLogo />
+        <span>Email me</span>
+      </a>
     </div>
   </div>
 
