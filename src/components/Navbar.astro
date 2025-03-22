@@ -27,12 +27,19 @@ const { options } = Astro.props;
           return (
             <li>
               {option.icon ? (
-                <a class="filled" href={option.href}>
+                <a
+                  class="filled"
+                  href={option.href}
+                  target={option.target ? option.target : "_self"}
+                  rel="noopener noreferrer"
+                >
                   <span>{option.label}</span>
                   <option.icon color="var(--background-400)" />
                 </a>
               ) : (
-                <a href={option.href}>{option.label}</a>
+                <a href={option.href} target={option.target ? option.target : "_self"}>
+                  {option.label}
+                </a>
               )}
             </li>
           );

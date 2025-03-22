@@ -1,3 +1,4 @@
+import ExternalLink from "@components/svgs/ExternalLink.astro";
 import EmailLogo from "@components/svgs/social/EmailLogo.astro";
 import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
@@ -22,7 +23,15 @@ import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
 import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
 import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
 import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
-import type { JobInfo, SocialLink, TechSectionInformation } from "@components/types";
+import type { JobInfo, NavbarOption, SocialLink, TechSectionInformation } from "@components/types";
+
+export const navbarOptions: NavbarOption[] = [
+  { label: "Home", href: "#home" },
+  { label: "My Experience", href: "#my-experience" },
+  { label: "About", href: "#about" },
+  { label: "Tech Stack", href: "#tech-stack" },
+  { label: "Let's Talk", href: "https://www.linkedin.com/in/thgear27/", icon: ExternalLink, target: "_blank" },
+];
 
 export const socialLinks: SocialLink[] = [
   {
