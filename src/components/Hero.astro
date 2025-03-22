@@ -25,7 +25,7 @@ const { socialLinks } = Astro.props;
       {
         socialLinks.map((link) => {
           return (
-            <a href={link.href} target="_blank">
+            <a href={link.href} target={link.target ? link.target : "_blank"} rel="noopener noreferrer">
               <link.icon color="var(--light-90)" />
               <span>{link.label}</span>
             </a>

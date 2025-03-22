@@ -19,13 +19,17 @@
   --light-10: hsl(0, 0%, 100%, 0.1);
 
   --dark-15: hsl(0, 0%, 0%, 0.15);
+  --dark-90: hsl(0, 0%, 0%, 0.9);
+  --dark-80: hsl(0, 0%, 0%, 0.8);
 
   --primary-400: hsl(98, 93%, 82%);
 
   --background-400: hsl(204, 67%, 9%);
+  --background-450: hsl(212, 31%, 12%);
   --background-500: hsl(203, 33%, 17%);
 
   --title-gradient: linear-gradient(to right, rgba(198, 252, 166) 0%, rgba(125, 193, 186, 0.74) 100%);
+  --radial-gradient: radial-gradient(circle at center, rgba(198, 252, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
 
   --body: 1rem;
   --large: 1.125rem;
@@ -131,7 +135,7 @@ img {
   transform: translateY(-50%);
 
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  background: var(--radial-gradient);
 }
 
 .circle-gradient-left {
@@ -149,7 +153,7 @@ img {
   transform: translateY(-50%);
 
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  background: var(--radial-gradient);
 }
 
 .line-break {
@@ -255,6 +259,7 @@ input:focus {
 
   :root {
     --section-spacing: 2rem;
+    --radial-gradient: radial-gradient(circle at center, rgba(198, 252, 166, 0.09) 0%, rgba(0, 0, 0, 0) 70%);
   }
 }
 

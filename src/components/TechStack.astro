@@ -39,18 +39,36 @@ const { techStackInfo } = Astro.props;
           );
         })
       }
-    </div>
 
-    <div class="other-techs">
-      <p>Other Technologies:</p>
-      <div class="other-techs-list">
+      <div class="other-techs">
+        <p>Other Technologies:</p>
+        <div class="other-techs-list">
+          {
+            techStackInfo.otherTechs.map((tech) => {
+              return (
+                <div>
+                  <span class="tech">{tech.name}</span>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <div class="paragraph">
         {
-          techStackInfo.otherTechs.map((tech) => {
-            return (
-              <div>
-                <span class="tech">{tech.name}</span>
-              </div>
-            );
+          techStackInfo.sectionParagraphs.map((paragraph) => {
+            const parseText = (text: string) => {
+              const parts = text.split(/(\*[^*]+\*)/g); // Split by words enclosed in *
+
+              return parts.map((part) => {
+                if (part.startsWith("*") && part.endsWith("*")) {
+                  return <span class="highlight">{part.slice(1, -1)}</span>;
+                }
+                return part;
+              });
+            };
+            return <p>{parseText(paragraph)}</p>;
           })
         }
       </div>

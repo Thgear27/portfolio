@@ -22,7 +22,7 @@ import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
 import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
 import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
 import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
-import type { JobInfo, SocialLink, TechCategory, TechSectionInformation } from "@components/types";
+import type { JobInfo, SocialLink, TechSectionInformation } from "@components/types";
 
 export const socialLinks: SocialLink[] = [
   {
@@ -36,9 +36,10 @@ export const socialLinks: SocialLink[] = [
     label: "GitHub",
   },
   {
-    href: "#",
+    href: "mailto:vegasfernando2003@gmail.com?subject=Hello Fernando!, I would like to work with you",
     icon: EmailLogo,
     label: "Email me",
+    target: "_self",
   },
 ];
 
@@ -208,6 +209,6 @@ export const techStackInfo: TechSectionInformation = {
     },
   ],
   sectionParagraphs: [
-    "Beyond just using technologies, I enjoy understanding their inner workings and how they interact. I stay up to date with emerging tools and best practices to continuously refine my workflow and deliver high-quality code.",
+    "Beyond just using technologies, I enjoy *understanding * their inner workings and how they interact. I stay up to date with *emerging tools* and *best practices* to continuously refine my workflow and deliver *high-quality code*.",
   ],
 };
