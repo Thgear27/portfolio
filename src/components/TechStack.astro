@@ -1,22 +1,22 @@
 ---
 import SectionTitle from "./ui/SectionTitle.astro";
 import Sparkle from "./svgs/Sparkle.astro";
-import type { TechCategory } from "./types";
+import type { TechSectionInformation } from "./types";
 
 type Props = {
-  techStack: TechCategory[];
+  techStackInfo: TechSectionInformation;
 };
 
-const { techStack } = Astro.props;
+const { techStackInfo } = Astro.props;
 ---
 
 <section id="tech-stack">
   <div class="content wrapper">
     <SectionTitle title="Tech Stack" subtitle="Technologies I've been using" />
 
-    <div class="categories">
+    <div class="tech-stack-info">
       {
-        techStack.map((category) => {
+        techStackInfo.techStack.map((category) => {
           return (
             <div class="category">
               <div class="title">
@@ -27,7 +27,7 @@ const { techStack } = Astro.props;
                 {category.techs.map((tech) => {
                   return (
                     <div class="tech">
-                      <tech.icon />
+                      {tech.icon && <tech.icon />}
                       <h4>{tech.name}</h4>
                     </div>
                   );
@@ -39,6 +39,21 @@ const { techStack } = Astro.props;
           );
         })
       }
+    </div>
+
+    <div class="other-techs">
+      <p>Other Technologies:</p>
+      <div class="other-techs-list">
+        {
+          techStackInfo.otherTechs.map((tech) => {
+            return (
+              <div>
+                <span class="tech">{tech.name}</span>
+              </div>
+            );
+          })
+        }
+      </div>
     </div>
 
     <div class="circle-gradient-left"></div>
@@ -57,7 +72,7 @@ const { techStack } = Astro.props;
     gap: var(--section-spacing);
   }
 
-  .categories {
+  .tech-stack-info {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -75,9 +90,15 @@ const { techStack } = Astro.props;
     position: relative;
   }
 
-  .categories .title {
+  .tech-stack-info .title {
     display: flex;
     gap: 0.75rem;
+  }
+
+  .tech-stack-info .title h3 {
+    font-size: 1.25rem;
+    font-family: var(--font-title);
+    color: var(--light-90);
   }
 
   .techs {
@@ -103,6 +124,30 @@ const { techStack } = Astro.props;
     text-wrap: nowrap;
   }
 
+  .other-techs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .other-techs-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .other-techs-list span {
+    font-size: 0.875rem;
+    font-family: var(--font-body);
+    color: var(--light-90);
+    text-align: center;
+    background-color: var(--dark-15);
+    padding: 0 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--light-30);
+  }
+
   .circle-light {
     --width: 300px;
     --height: 300px;
@@ -113,9 +158,6 @@ const { techStack } = Astro.props;
 
     right: calc(var(--width) / -2);
     top: calc(var(--width) / -2);
-
-
-
 
     z-index: 2;
     background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 0%, rgba(0, 0, 0, 0) 70%);

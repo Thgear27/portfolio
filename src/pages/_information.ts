@@ -13,6 +13,7 @@ import HtmlIcon from "@components/svgs/tech/HtmlIcon.astro";
 import JavascriptIcon from "@components/svgs/tech/JavascriptIcon.astro";
 import LinuxIcon from "@components/svgs/tech/LinuxIcon.astro";
 import NextIcon from "@components/svgs/tech/NextIcon.astro";
+import NodeIcon from "@components/svgs/tech/NodeIcon.astro";
 import PnpmIcon from "@components/svgs/tech/PnpmIcon.astro";
 import PostgresIcon from "@components/svgs/tech/PostgresIcon.astro";
 import ReactIcon from "@components/svgs/tech/ReactIcon.astro";
@@ -21,7 +22,7 @@ import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
 import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
 import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
 import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
-import type { JobInfo, SocialLink, TechCategory } from "@components/types";
+import type { JobInfo, SocialLink, TechCategory, TechSectionInformation } from "@components/types";
 
 export const socialLinks: SocialLink[] = [
   {
@@ -81,128 +82,132 @@ export const aboutParagraphs = [
   "I love building *efficient*, *scalable*, and *maintainable* solutions. To me, coding is more than just writing functions—it's about crafting seamless user experiences and architecting systems that stand the test of time.",
 ];
 
-export const techStack: TechCategory[] = [
-  {
-    title: "Frontend",
-    techs: [
-      {
-        name: "HTML 5",
-        icon: HtmlIcon,
-      },
-      {
-        name: "CSS",
-        icon: CssIcon,
-      },
-      {
-        name: "JavaScript",
-        icon: JavascriptIcon,
-      },
-      {
-        name: "Tailwind",
-        icon: TailwindIcon,
-      },
-      {
-        name: "Astro",
-        icon: AstroIcon,
-      },
-      {
-        name: "Svelte",
-        icon: SvelteIcon,
-      },
-      {
-        name: "React",
-        icon: ReactIcon,
-      },
-      {
-        name: "Next.js",
-        icon: NextIcon,
-      },
-    ],
-  },
-  {
-    title: "Backend",
-    techs: [
-      {
-        name: "Node.js",
-        icon: AstroIcon,
-      },
-      {
-        name: "Express",
-        icon: ExpressIcon,
-      },
-      {
-        name: "Supabase",
-        icon: SupabaseIcon,
-      },
-      {
-        name: "TypeScript",
-        icon: TypescriptIcon,
-      },
-      {
-        name: "PostgreSQL",
-        icon: PostgresIcon,
-      },
-    ],
-  },
-  {
-    title: "Tools",
-    techs: [
-      {
-        name: "Linux",
-        icon: LinuxIcon,
-      },
-      {
-        name: "Digital Ocean",
-        icon: DigitalOceanIcon,
-      },
-      {
-        name: "Git",
-        icon: GitIcon,
-      },
-      {
-        name: "GitHub",
-        icon: GithubIcon,
-      },
-      {
-        name: "Figma",
-        icon: FigmaIcon,
-      },
-      {
-        name: "VS Code",
-        icon: VscodeIcon,
-      },
-      {
-        name: "pnpm",
-        icon: PnpmIcon,
-      },
-      {
-        name: "Docker",
-        icon: DockerIcon,
-      },
-    ],
-  },
-];
-
-export const otherTechs = [
-  {
-    name: "Drizzle",
-  },
-  {
-    name: "Deno",
-  },
-  {
-    name: "Sqlite",
-  },
-  {
-    name: "MySQL",
-  },
-  {
-    name: "C/C++",
-  },
-  {
-    name: "Caddy",
-  },
-  {
-    name: "Cloudflare",
-  },
-];
+export const techStackInfo: TechSectionInformation = {
+  techStack: [
+    {
+      title: "Frontend",
+      techs: [
+        {
+          name: "HTML 5",
+          icon: HtmlIcon,
+        },
+        {
+          name: "CSS",
+          icon: CssIcon,
+        },
+        {
+          name: "JavaScript",
+          icon: JavascriptIcon,
+        },
+        {
+          name: "Tailwind",
+          icon: TailwindIcon,
+        },
+        {
+          name: "Astro",
+          icon: AstroIcon,
+        },
+        {
+          name: "Svelte",
+          icon: SvelteIcon,
+        },
+        {
+          name: "React",
+          icon: ReactIcon,
+        },
+        {
+          name: "Next.js",
+          icon: NextIcon,
+        },
+      ],
+    },
+    {
+      title: "Backend",
+      techs: [
+        {
+          name: "Node.js",
+          icon: NodeIcon,
+        },
+        {
+          name: "Express",
+          icon: ExpressIcon,
+        },
+        {
+          name: "Supabase",
+          icon: SupabaseIcon,
+        },
+        {
+          name: "TypeScript",
+          icon: TypescriptIcon,
+        },
+        {
+          name: "PostgreSQL",
+          icon: PostgresIcon,
+        },
+      ],
+    },
+    {
+      title: "Tools",
+      techs: [
+        {
+          name: "Linux",
+          icon: LinuxIcon,
+        },
+        {
+          name: "Digital Ocean",
+          icon: DigitalOceanIcon,
+        },
+        {
+          name: "Git",
+          icon: GitIcon,
+        },
+        {
+          name: "GitHub",
+          icon: GithubIcon,
+        },
+        {
+          name: "Figma",
+          icon: FigmaIcon,
+        },
+        {
+          name: "VS Code",
+          icon: VscodeIcon,
+        },
+        {
+          name: "pnpm",
+          icon: PnpmIcon,
+        },
+        {
+          name: "Docker",
+          icon: DockerIcon,
+        },
+      ],
+    },
+  ],
+  otherTechs: [
+    {
+      name: "Drizzle",
+    },
+    {
+      name: "Deno",
+    },
+    {
+      name: "Sqlite",
+    },
+    {
+      name: "MySQL",
+    },
+    {
+      name: "C/C++",
+    },
+    {
+      name: "Caddy",
+    },
+    {
+      name: "Cloudflare",
+    },
+  ],
+  sectionParagraphs: [
+    "Beyond just using technologies, I enjoy understanding their inner workings and how they interact. I stay up to date with emerging tools and best practices to continuously refine my workflow and deliver high-quality code.",
+  ],
+};

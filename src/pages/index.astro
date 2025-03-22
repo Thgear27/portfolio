@@ -6,7 +6,7 @@ import Experience from "@components/Experience.astro";
 import AboutMe from "@components/AboutMe.astro";
 import TechStack from "@components/TechStack.astro";
 
-import { aboutParagraphs, jobs, socialLinks, techStack } from "./_information";
+import { aboutParagraphs, jobs, socialLinks, techStackInfo } from "./_information";
 ---
 
 <Layout>
@@ -15,7 +15,7 @@ import { aboutParagraphs, jobs, socialLinks, techStack } from "./_information";
     <Hero {socialLinks} />
     <Experience {jobs} />
     <AboutMe paragraphs={aboutParagraphs} />
-    <TechStack {techStack} />
+    <TechStack {techStackInfo} />
   </main>
 </Layout>
 

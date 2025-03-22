@@ -11,10 +11,18 @@ export type JobInfo = {
   workTeammates?: { name: string; imgURL: string; linkedInUrl: string }[];
 };
 
+export type Tech = {
+  name: string;
+  icon?: (_props: Record<string, any>) => any;
+};
+
 export type TechCategory = {
   title: string;
-  techs: {
-    name: string;
-    icon: (_props: Record<string, any>) => any;
-  }[];
+  techs: Tech[];
+};
+
+export type TechSectionInformation = {
+  techStack: TechCategory[];
+  otherTechs: Tech[];
+  sectionParagraphs: string[];
 };
