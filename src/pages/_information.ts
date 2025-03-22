@@ -3,9 +3,12 @@ import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
 import AstroIcon from "@components/svgs/tech/AstroIcon.astro";
 import CssIcon from "@components/svgs/tech/CssIcon.astro";
+import DigitalOceanIcon from "@components/svgs/tech/DigitalOceanIcon.astro";
 import DockerIcon from "@components/svgs/tech/DockerIcon.astro";
 import ExpressIcon from "@components/svgs/tech/ExpressIcon.astro";
 import FigmaIcon from "@components/svgs/tech/FigmaIcon.astro";
+import GithubIcon from "@components/svgs/tech/GithubIcon.astro";
+import GitIcon from "@components/svgs/tech/GitIcon.astro";
 import HtmlIcon from "@components/svgs/tech/HtmlIcon.astro";
 import JavascriptIcon from "@components/svgs/tech/JavascriptIcon.astro";
 import LinuxIcon from "@components/svgs/tech/LinuxIcon.astro";
@@ -18,7 +21,7 @@ import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
 import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
 import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
 import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
-import type { JobInfo, SocialLink } from "@components/types";
+import type { JobInfo, SocialLink, TechCategory } from "@components/types";
 
 export const socialLinks: SocialLink[] = [
   {
@@ -78,12 +81,12 @@ export const aboutParagraphs = [
   "I love building *efficient*, *scalable*, and *maintainable* solutions. To me, coding is more than just writing functions—it's about crafting seamless user experiences and architecting systems that stand the test of time.",
 ];
 
-export const techStack = [
+export const techStack: TechCategory[] = [
   {
-    category: "Frontend",
+    title: "Frontend",
     techs: [
       {
-        name: "HTML",
+        name: "HTML 5",
         icon: HtmlIcon,
       },
       {
@@ -117,7 +120,7 @@ export const techStack = [
     ],
   },
   {
-    category: "Backend",
+    title: "Backend",
     techs: [
       {
         name: "Node.js",
@@ -142,15 +145,23 @@ export const techStack = [
     ],
   },
   {
-    category: "Tools",
+    title: "Tools",
     techs: [
       {
+        name: "Linux",
+        icon: LinuxIcon,
+      },
+      {
+        name: "Digital Ocean",
+        icon: DigitalOceanIcon,
+      },
+      {
         name: "Git",
-        icon: AstroIcon,
+        icon: GitIcon,
       },
       {
         name: "GitHub",
-        icon: AstroIcon,
+        icon: GithubIcon,
       },
       {
         name: "Figma",
@@ -168,10 +179,30 @@ export const techStack = [
         name: "Docker",
         icon: DockerIcon,
       },
-      {
-        name: "Linux",
-        icon: LinuxIcon,
-      },
     ],
+  },
+];
+
+export const otherTechs = [
+  {
+    name: "Drizzle",
+  },
+  {
+    name: "Deno",
+  },
+  {
+    name: "Sqlite",
+  },
+  {
+    name: "MySQL",
+  },
+  {
+    name: "C/C++",
+  },
+  {
+    name: "Caddy",
+  },
+  {
+    name: "Cloudflare",
   },
 ];

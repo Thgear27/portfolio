@@ -18,6 +18,8 @@
   --light-15: hsl(0, 0%, 100%, 0.15);
   --light-10: hsl(0, 0%, 100%, 0.1);
 
+  --dark-15: hsl(0, 0%, 0%, 0.15);
+
   --primary-400: hsl(98, 93%, 82%);
 
   --background-400: hsl(204, 67%, 9%);
@@ -129,7 +131,7 @@ img {
   transform: translateY(-50%);
 
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .circle-gradient-left {
@@ -147,7 +149,7 @@ img {
   transform: translateY(-50%);
 
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at center, rgba(198, 252, 166, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .line-break {
