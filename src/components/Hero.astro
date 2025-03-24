@@ -82,6 +82,12 @@ const { socialLinks, email } = Astro.props;
     border: 1px solid var(--light-30);
     border-radius: 100px;
     color: var(--light-90);
+    background-color: #00000000;
+    transition: background-color 0.2s ease
+  }
+
+  .social-links a:hover {
+    background-color: var(--light-10);
   }
 
   .social-links a :global(svg) {

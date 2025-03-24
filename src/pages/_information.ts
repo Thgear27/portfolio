@@ -65,6 +65,11 @@ export const jobs: JobInfo[] = [
     description:
       "I integrated the GitHub API, implemented secure authentication with OAuth, and used SSR in Astro. I also worked with AST for code manipulation, wrote tests for quality, and incorporated Figma design concepts.",
     workTeammates: [
+      // {
+      //   name: "Jean Pierre Rodríguez",
+      //   imgURL: "/imgs/antonyfaris.webp",
+      //   linkedInUrl: "https://www.linkedin.com/in/jean-piere-rodriguez/",
+      // },
       {
         name: "Jean Pierre Rodríguez",
         imgURL: "/imgs/jeanpierre.webp",

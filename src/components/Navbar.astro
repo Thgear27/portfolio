@@ -37,7 +37,7 @@ const { options } = Astro.props;
                   <option.icon color="var(--background-400)" />
                 </a>
               ) : (
-                <a href={option.href} target={option.target ? option.target : "_self"}>
+                <a class="not-filled" href={option.href} target={option.target ? option.target : "_self"}>
                   {option.label}
                 </a>
               )}
@@ -133,23 +133,40 @@ const { options } = Astro.props;
   }
 
   li {
+    display: flex;
+    align-items: center;
     margin: 0;
   }
 
   li a {
     display: flex;
+    height: 100%;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     text-wrap: nowrap;
+    border-radius: 100px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .not-filled:hover {
+    background-color: var(--light-15);
   }
 
   .filled {
+    position: relative;
     background-color: white;
     border-radius: 100px;
     color: var(--background-400);
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .filled:hover {
+    opacity: 0.8;
   }
 
   nav {
