@@ -11,7 +11,7 @@ type Props = {
 const { jobs } = Astro.props;
 ---
 
-<section id="my-experience" data-aos="fade" data-aos-offset="200">
+<section id="my-experience" data-aos="fade">
   <div class="content wrapper">
     <SectionTitle title="My Experience" subtitle="Where I have been employed" />
 
@@ -24,7 +24,7 @@ const { jobs } = Astro.props;
                 <div class="job-title">
                   <Briefcase />
                   <h3>
-                    Software Developer, <span class="gradient">{job.company}</span>
+                    {job.title}, <span class="gradient">{job.company}</span>
                   </h3>
                 </div>
                 <p class="job-start-end">
