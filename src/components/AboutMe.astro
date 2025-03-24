@@ -8,7 +8,7 @@ type Props = {
 const { paragraphs } = Astro.props;
 ---
 
-<section id="about" data-aos="fade" data-aos-offset="200">
+<section id="about">
   <div class="content wrapper">
     <SectionTitle title="About Me" subtitle="Who Am I?" align="left" />
 
@@ -30,7 +30,7 @@ const { paragraphs } = Astro.props;
           })
         }
       </div>
-      <img src="/imgs/profilephoto.webp" alt="" />
+      <img src="/imgs/profilephoto.webp" alt="profile" loading="lazy" />
     </div>
 
     <div class="circle-gradient-right"></div>

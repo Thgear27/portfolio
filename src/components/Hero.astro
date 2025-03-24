@@ -13,7 +13,7 @@ const { socialLinks, email } = Astro.props;
 <section id="home">
   <div class="content wrapper">
     <div class="title">
-      <h1>Hello, I'm <span class="gradient">Fernando</span></h1>
+      <h1 data-section-id="home">Hello, I'm <span class="gradient">Fernando</span></h1>
       <p class="subtitle">Web Developer - Problem Solver</p>
     </div>
     <p class="text">
@@ -102,7 +102,7 @@ const { socialLinks, email } = Astro.props;
 
   @media (max-width: 768px) {
     section {
-      padding: 3rem 0;
+      padding: 2rem 0;
     }
   }
 </style>
