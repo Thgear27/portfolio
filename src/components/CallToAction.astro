@@ -63,7 +63,13 @@ const { email } = Astro.props;
     margin: 0;
   }
 
+  .contact-button {
+    display: flex;
+    align-items: center;
+  }
+
   .contact-button a {
+    width: 100%;
     padding: 12px 16px;
     background: var(--background-450);
     color: var(--light-90);
@@ -100,6 +106,10 @@ const { email } = Astro.props;
     .contact-button {
       width: 100%;
       text-align: center;
+    }
+
+    .contact-button a {
+      justify-content: space-between;
     }
   }
 </style>
