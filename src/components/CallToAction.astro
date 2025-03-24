@@ -28,10 +28,9 @@ const { email } = Astro.props;
 
 <style>
   section {
-    padding-bottom: var(--section-spacing);
+    padding: var(--section-spacing) 0;
     position: relative;
   }
-
   .box {
     display: flex;
     align-items: center;
@@ -79,7 +78,7 @@ const { email } = Astro.props;
   }
 
   .contact-button a :global(svg) {
-    transform: rotate(-180deg);
+    transform: rotate(0deg);
     transition: transform 0.2s ease-in-out;
   }
 
@@ -92,10 +91,6 @@ const { email } = Astro.props;
   }
 
   @media (max-width: 600px) {
-    section {
-      padding: var(--section-spacing) 0;
-    }
-
     .box {
       flex-direction: column;
       gap: 2rem;

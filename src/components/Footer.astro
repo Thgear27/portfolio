@@ -10,12 +10,17 @@ export type Props = {
 <section class="wrapper">
   <div class="line-break"></div>
   <div class="footer-content">
-    <div>© 2025 Fernando Vegas</div>
+    <div class="copyright-text">© <span class="year">2025</span> Fernando Vegas</div>
     <div class="social">
       {
         socialLinks.map((link) => {
           return (
-            <a href={link.href} target={link.target ? link.target : "_blank"} rel="noopener noreferrer">
+            <a
+              href={link.href}
+              target={link.target ? link.target : "_blank"}
+              aria-label={link.label}
+              rel="noopener noreferrer"
+            >
               <link.icon color="var(--light-90)" />
             </a>
           );
@@ -24,6 +29,11 @@ export type Props = {
     </div>
   </div>
 </section>
+
+<script>
+  const yearSpan = document.querySelector(".year");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
+</script>
 
 <style>
   .footer-content {
@@ -34,10 +44,29 @@ export type Props = {
     padding: 1rem 0;
   }
 
+  .copyright-text {
+    font-size: 0.875rem;
+  }
+
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  .social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .social a {
+    display: flex;
+  }
+
   .social a :global(svg) {
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 1rem;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
   }

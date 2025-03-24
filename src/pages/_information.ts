@@ -4,6 +4,7 @@ import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
 import AstroIcon from "@components/svgs/tech/AstroIcon.astro";
 import CssIcon from "@components/svgs/tech/CssIcon.astro";
+import DenoIcon from "@components/svgs/tech/DenoIcon.astro";
 import DigitalOceanIcon from "@components/svgs/tech/DigitalOceanIcon.astro";
 import DockerIcon from "@components/svgs/tech/DockerIcon.astro";
 import ExpressIcon from "@components/svgs/tech/ExpressIcon.astro";
@@ -140,6 +141,10 @@ export const techStackInfo: TechSectionInformation = {
           icon: NodeIcon,
         },
         {
+          name: "Deno",
+          icon: DenoIcon,
+        },
+        {
           name: "Express",
           icon: ExpressIcon,
         },
@@ -198,9 +203,6 @@ export const techStackInfo: TechSectionInformation = {
   otherTechs: [
     {
       name: "Drizzle",
-    },
-    {
-      name: "Deno",
     },
     {
       name: "Sqlite",
