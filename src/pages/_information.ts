@@ -62,7 +62,7 @@ export const jobs: JobInfo[] = [
     title: "Full Stack Developer",
     company: "Modular Rocks",
     date: "Nov 2023 - Nov 2024 ",
-    location: "Londrom, UK",
+    location: "London, UK",
     description:
       "I integrated the GitHub API, implemented secure authentication with OAuth, and used SSR in Astro. I also worked with AST for code manipulation, wrote tests for quality, and incorporated Figma design concepts.",
     workTeammates: [
