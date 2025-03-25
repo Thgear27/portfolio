@@ -12,16 +12,16 @@ const { socialLinks, email } = Astro.props;
 
 <section id="home">
   <div class="content wrapper">
-    <div class="title">
-      <h1 data-section-id="home">Hello, I'm <span class="gradient">Fernando</span></h1>
-      <p class="subtitle">Web Developer - Problem Solver</p>
-    </div>
+    <h1>Hello, I'm <span class="gradient">Fernando</span></h1>
+    <p class="subtitle">Web Developer - Problem Solver</p>
     <p class="text">
       I build
       <span class="highlight">fast</span>,
       <span class="highlight">modern</span>, and
       <span class="highlight">user-friendly</span> web experiences. Passionate about clean code, performance, and crafting
       digital solutions that make an impact.
+      <!-- I build fast, modern, and user-friendly web experiences. Passionate about clean code, performance, and crafting digital
+      solutions that make an impact. -->
     </p>
     <div class="social-links">
       {
@@ -58,12 +58,21 @@ const { socialLinks, email } = Astro.props;
   }
 
   .subtitle {
-    color: var(--light-80);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--light-90);
+  }
+
+  .highlight {
+    opacity: 0.9;
+    font-weight: 800;
+    font-size: inherit;
   }
 
   .text {
     font-size: 1.25rem;
-    color: var(--light-90);
+    line-height: 140%;
+    color: var(--light-80);
   }
 
   .social-links {
