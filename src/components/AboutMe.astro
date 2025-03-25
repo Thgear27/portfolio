@@ -1,16 +1,18 @@
 ---
+import type { AboutCopy } from "./types";
 import SectionTitle from "./ui/SectionTitle.astro";
 
 type Props = {
-  paragraphs: string[];
+  aboutMeCopy: AboutCopy;
 };
 
-const { paragraphs } = Astro.props;
+const { aboutMeCopy } = Astro.props;
+const { paragraphs, title, subtitle } = aboutMeCopy;
 ---
 
 <section id="about">
   <div class="content wrapper">
-    <SectionTitle title="About Me" subtitle="Who Am I?" align="left" />
+    <SectionTitle {title} {subtitle} align="left" />
 
     <div class="info">
       <div class="about-text">

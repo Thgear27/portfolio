@@ -1,27 +1,45 @@
 ---
 import EmailLogo from "./svgs/social/EmailLogo.astro";
-import type { SocialLink } from "./types";
+import type { HeroCopy } from "./types";
 
 export type Props = {
-  socialLinks: SocialLink[];
-  email: string;
+  heroCopy: HeroCopy;
 };
 
-const { socialLinks, email } = Astro.props;
+const { heroCopy } = Astro.props;
+const { socialLinks, email } = heroCopy;
 ---
 
 <section id="home">
   <div class="content wrapper">
-    <h1>Hello, I'm <span class="gradient">Fernando</span></h1>
-    <p class="subtitle">Web Developer - Problem Solver</p>
+    <h1>
+      {
+        () => {
+          const parts = heroCopy.title.split(/(\*[^*]+\*)/g); // Split by words enclosed in *
+
+          return parts.map((part) => {
+            if (part.startsWith("*") && part.endsWith("*")) {
+              return <span class="gradient">{part.slice(1, -1)}</span>;
+            }
+            return part;
+          });
+        }
+      }
+    </h1>
+    <p class="subtitle">{heroCopy.subtitle}</p>
     <p class="text">
-      I build
-      <span class="highlight">fast</span>,
-      <span class="highlight">modern</span>, and
-      <span class="highlight">user-friendly</span> web experiences. Passionate about clean code, performance, and crafting
-      digital solutions that make an impact.
-      <!-- I build fast, modern, and user-friendly web experiences. Passionate about clean code, performance, and crafting digital
-      solutions that make an impact. -->
+      {
+        () => {
+          const parts = heroCopy.description.split(/(\*[^*]+\*)/g); // Split by words enclosed in *
+
+          return parts.map((part) => {
+            if (part.startsWith("*") && part.endsWith("*")) {
+              return <span class="highlight">{part.slice(1, -1)}</span>;
+            }
+            return part;
+          });
+        }
+      }
     </p>
     <div class="social-links">
       {
@@ -37,7 +55,7 @@ const { socialLinks, email } = Astro.props;
 
       <a href={`mailto:${email}?subject=Hello Fernando!, I would like to work with you`}>
         <EmailLogo />
-        <span>Email me</span>
+        <span>{heroCopy.emailText}</span>
       </a>
     </div>
   </div>
@@ -64,7 +82,6 @@ const { socialLinks, email } = Astro.props;
   }
 
   .highlight {
-    opacity: 0.9;
     font-weight: 800;
     font-size: inherit;
   }

@@ -1,22 +1,23 @@
 ---
 import SectionTitle from "./ui/SectionTitle.astro";
 import Sparkle from "./svgs/Sparkle.astro";
-import type { TechSectionInformation } from "./types";
+import type { TechStackCopy } from "./types";
 
 type Props = {
-  techStackInfo: TechSectionInformation;
+  techStackCopy: TechStackCopy;
 };
 
-const { techStackInfo } = Astro.props;
+const { techStackCopy } = Astro.props;
+const { title, subtitle } = techStackCopy;
 ---
 
 <section id="tech-stack">
   <div class="content wrapper">
-    <SectionTitle title="Tech Stack" subtitle="Technologies I've been using" />
+    <SectionTitle {title} {subtitle} />
 
     <div class="tech-stack-info">
       {
-        techStackInfo.techStack.map((category) => {
+        techStackCopy.techStack.map((category) => {
           return (
             <div class="category">
               <div class="title">
@@ -41,10 +42,10 @@ const { techStackInfo } = Astro.props;
       }
 
       <div class="other-techs">
-        <p>Other Technologies:</p>
+        <p>{techStackCopy.otherTechsTitle}:</p>
         <div class="other-techs-list">
           {
-            techStackInfo.otherTechs.map((tech) => {
+            techStackCopy.otherTechs.map((tech) => {
               return (
                 <div>
                   <span class="tech">{tech.name}</span>
@@ -57,7 +58,7 @@ const { techStackInfo } = Astro.props;
 
       <div class="paragraph">
         {
-          techStackInfo.sectionParagraphs.map((paragraph) => {
+          techStackCopy.sectionParagraphs.map((paragraph) => {
             const parseText = (text: string) => {
               const parts = text.split(/(\*[^*]+\*)/g); // Split by words enclosed in *
 

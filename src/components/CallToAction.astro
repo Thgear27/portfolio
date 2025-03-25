@@ -1,24 +1,26 @@
 ---
 import Arrow from "./svgs/Arrow.astro";
+import type { CallToActionCopy } from "./types";
 
 type Props = {
-  email: string;
+  callToActionCopy: CallToActionCopy;
 };
 
-const { email } = Astro.props;
+const { callToActionCopy } = Astro.props;
+const { email } = callToActionCopy;
 ---
 
 <section>
   <div class="content wrapper">
     <div class="box">
       <div class="call-to-action">
-        <h2>Let's work together to build something great!</h2>
-        <p>Reach out to me for collaborations, inquiries, or just to say hello.</p>
+        <h2>{callToActionCopy.title}</h2>
+        <p>{callToActionCopy.subtitle}</p>
       </div>
 
       <div class="contact-button">
         <a href={`mailto:${email}?subject=Hello Fernando!, I would like to work with you`}>
-          <span>Send me an email</span>
+          <span>{callToActionCopy.emailText}</span>
           <Arrow color="var(--light-90)" />
         </a>
       </div>

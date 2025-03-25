@@ -2,18 +2,19 @@
 import Briefcase from "./svgs/Briefcase.astro";
 import SectionTitle from "./ui/SectionTitle.astro";
 import LinkedInLogoCircle from "./svgs/social/LinkedInLogoCircle.astro";
-import type { JobInfo } from "./types";
+import type { ExperienceCopy } from "./types";
 
 type Props = {
-  jobs: JobInfo[];
+  experienceCopy: ExperienceCopy;
 };
 
-const { jobs } = Astro.props;
+const { experienceCopy } = Astro.props;
+const { jobs, title, subtitle } = experienceCopy;
 ---
 
 <section id="my-experience">
   <div class="content wrapper">
-    <SectionTitle title="My Experience" subtitle="Where I have been employed" />
+    <SectionTitle {title} {subtitle} />
 
     <div class="list">
       {
