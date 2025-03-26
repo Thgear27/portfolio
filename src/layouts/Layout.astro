@@ -1,5 +1,6 @@
 ---
 import "../css/base.css";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -9,6 +10,7 @@ import "../css/base.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
     <title>Fernando Vegas</title>
   </head>
   <body>
@@ -17,43 +19,45 @@ import "../css/base.css";
 </html>
 
 <script>
-  const sections: NodeListOf<HTMLElement> = document.querySelectorAll("main > section");
-  const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(".nav-link");
+  document.addEventListener("astro:page-load", () => {
+    const sections: NodeListOf<HTMLElement> = document.querySelectorAll("main > section");
+    const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(".nav-link");
 
-  const activeSections = new Set<HTMLElement>();
-  let lastVisibleSection: HTMLElement | null = null;
+    const activeSections = new Set<HTMLElement>();
+    let lastVisibleSection: HTMLElement | null = null;
 
-  function updateActiveNavLink() {
-    navLinks.forEach((link) => link.classList.remove("active"));
+    function updateActiveNavLink() {
+      navLinks.forEach((link) => link.classList.remove("active"));
 
-    const targetSection = activeSections.size === 1 ? Array.from(activeSections)[0] : lastVisibleSection;
+      const targetSection = activeSections.size === 1 ? Array.from(activeSections)[0] : lastVisibleSection;
 
-    if (targetSection) {
-      const link = document.querySelector<HTMLAnchorElement>(`.nav-link[href="#${targetSection.id}"]`);
-      link?.classList.add("active");
-    }
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const section = entry.target as HTMLElement;
-
-        if (entry.isIntersecting) {
-          activeSections.add(section);
-          lastVisibleSection = section;
-        } else {
-          activeSections.delete(section);
-        }
+      if (targetSection) {
+        const link = document.querySelector<HTMLAnchorElement>(`.nav-link[href="#${targetSection.id}"]`);
+        link?.classList.add("active");
       }
-
-      updateActiveNavLink();
-    },
-    {
-      rootMargin: "0px 0px -50% 0px",
-      threshold: 0.3,
     }
-  );
 
-  sections.forEach((section) => observer.observe(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const section = entry.target as HTMLElement;
+
+          if (entry.isIntersecting) {
+            activeSections.add(section);
+            lastVisibleSection = section;
+          } else {
+            activeSections.delete(section);
+          }
+        }
+
+        updateActiveNavLink();
+      },
+      {
+        rootMargin: "0px 0px -50% 0px",
+        threshold: 0.3,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
 </script>

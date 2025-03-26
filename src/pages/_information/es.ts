@@ -248,7 +248,7 @@ export const heroCopy: HeroCopy = {
   subtitle: "Web Developer - Problem Solver",
   description:
     "Creo experiencias web *rápidas*, *modernas* y *amigables para el usuario*. Apasionado por el código limpio, el rendimiento y crear soluciones digitales que generen impacto.",
-  emailText: "Envíame un correo",
+  emailText: "Email",
   email: email,
   socialLinks: socialLinks,
 };

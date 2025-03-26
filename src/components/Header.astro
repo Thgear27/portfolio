@@ -4,13 +4,14 @@ import type { NavbarOption } from "./types";
 
 type Props = {
   navbarOptions: NavbarOption[];
+  currentLanguage: string;
 };
 
-const { navbarOptions } = Astro.props;
+const { navbarOptions, currentLanguage } = Astro.props;
 ---
 
 <header>
-  <Navbar options={navbarOptions} />
+  <Navbar options={navbarOptions} {currentLanguage} />
 </header>
 <div class="spacer"></div>
 
@@ -35,6 +36,10 @@ const { navbarOptions } = Astro.props;
   @media (max-width: 768px) {
     .spacer {
       height: 90px;
+    }
+
+    header {
+      background-color: rgba(18, 38, 44);
     }
   }
 </style>

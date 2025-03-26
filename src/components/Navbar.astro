@@ -1,14 +1,16 @@
 ---
+import LanguageIcon from "./svgs/LanguageIcon.astro";
 import type { NavbarOption } from "./types";
 
 type Props = {
   options: NavbarOption[];
+  currentLanguage: string;
 };
 
-const { options } = Astro.props;
+const { options, currentLanguage } = Astro.props;
 ---
 
-<div class="wrapper">
+<div class="nav-container wrapper">
   <div class="mobile-button">
     <input type="checkbox" id="nav-toggle" />
     <label for="nav-toggle" id="nav-toggle-button">
@@ -47,18 +49,107 @@ const { options } = Astro.props;
       }
     </ul>
   </nav>
+
+  <div class="change-language-dropdown">
+    <div class="selected-option">
+      <LanguageIcon color="var(--light-80)" />
+      <span>{currentLanguage}</span>
+    </div>
+    <div class="language-options">
+      <a href="/en">EN</a>
+      <a href="/es">ES</a>
+    </div>
+  </div>
 </div>
 
 <script>
-  const navToggleLabel = document.getElementById("nav-toggle-button");
-  const nav = document.querySelector("nav");
+  document.addEventListener("astro:page-load", () => {
+    const navToggleLabel = document.getElementById("nav-toggle-button");
+    const nav = document.querySelector("nav");
+    const languageDropdown = document.querySelector(".change-language-dropdown");
+    const languageOptions = document.querySelector(".language-options");
 
-  navToggleLabel?.addEventListener("click", () => {
-    nav?.classList.toggle("open");
+    if (!navToggleLabel || !nav || !languageDropdown || !languageOptions) return;
+
+    navToggleLabel.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    languageDropdown.addEventListener("click", () => {
+      languageOptions.classList.toggle("open");
+    });
   });
 </script>
 
 <style>
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+  }
+
+  .change-language-dropdown {
+    position: relative;
+    box-shadow: 1px 6px 31px -3px rgba(0, 0, 0, 0.3);
+    padding: 0.25rem;
+    display: flex;
+    gap: 8px;
+    background-color: var(--background-500);
+    border-radius: 100px;
+    border: 1px solid var(--light-15);
+
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .selected-option {
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 100px;
+    transition: background-color 0.2s ease-in-out;
+    padding: 0.25rem 0.75rem;
+    user-select: none;
+  }
+
+  .selected-option:hover {
+    background-color: var(--light-15);
+    cursor: pointer;
+  }
+
+  .language-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background-color: var(--background-500);
+    border-radius: 16px;
+    border: 1px solid var(--light-15);
+    flex-direction: column;
+    width: 100%;
+    padding: 0.25rem;
+  }
+
+  .language-options.open {
+    display: flex;
+  }
+
+  .language-options a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+  }
+
+  .language-options a:hover {
+    background-color: var(--light-15);
+    cursor: pointer;
+  }
+
   #nav-toggle {
     display: none;
   }
@@ -179,6 +270,10 @@ const { options } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .nav-container {
+      justify-content: space-between;
+    }
+
     .mobile-button {
       display: flex;
       justify-content: flex-end;
@@ -190,10 +285,10 @@ const { options } = Astro.props;
       position: fixed;
       width: 80%;
       top: 0;
-      right: 0;
+      left: 0;
       z-index: 900;
       transition: transform 0.2s ease-in-out;
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
 
     nav.open {
