@@ -19,6 +19,7 @@ export type JobInfo = {
 export type ExperienceCopy = {
   title: string;
   subtitle: string;
+  collaboratedText: string;
   jobs: JobInfo[];
 };
 

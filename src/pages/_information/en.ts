@@ -59,6 +59,7 @@ export const email = "vegasfernando2003@gmail.com";
 export const experienceCopy: ExperienceCopy = {
   title: "My Experience",
   subtitle: "Where I have been employed",
+  collaboratedText: "~ collaborated with",
   jobs: [
     {
       title: "Full Stack Developer",

@@ -36,7 +36,7 @@ const { jobs, title, subtitle } = experienceCopy;
                 <p>{job.description}</p>
                 {job.workTeammates && (
                   <>
-                    <span class="italic">~ collaborated</span>
+                    <span class="italic">{experienceCopy.collaboratedText}</span>
                     <div class="profile-photos">
                       {job.workTeammates.map((teammate) => (
                         <a href={teammate.linkedInUrl} target="_blank">

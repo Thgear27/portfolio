@@ -59,6 +59,7 @@ export const email = "vegasfernando2003@gmail.com";
 export const experienceCopy: ExperienceCopy = {
   title: "Mi Experiencia",
   subtitle: "Donde he trabajado y colaborado",
+  collaboratedText: "~ colaboré con",
   jobs: [
     {
       title: "Full Stack Developer",
@@ -92,7 +93,7 @@ export const experienceCopy: ExperienceCopy = {
       title: "Full Stack Developer",
       company: "Coneimera",
       date: "Nov 2023 - Nov 2024",
-      location: "Lima, Peru",
+      location: "Lima, Perú",
       description:
         "Diseñé el sitio web de XXX - CONEIMERA, construí un backend seguro con RLS en Supabase, integré una pasarela de pagos y desarrollé un panel de administración para gestionar registros y pagos.",
     },
