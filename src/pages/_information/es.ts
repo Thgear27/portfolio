@@ -68,6 +68,13 @@ export const experienceCopy: ExperienceCopy = {
       location: "Canadá",
       description:
         "Aprovecho Modelos de Lenguaje Grandes, desarrollo web moderno y Cloudflare Workers para arquitectar soluciones inteligentes y sin servidor. Desarrollo parsers de archivos sofisticados e integro capacidades de IA para crear aplicaciones escalables y de alto rendimiento que resuelven problemas complejos de manera eficiente.",
+      workTeammates: [
+        {
+          name: "Antony Faris",
+          imgURL: "/imgs/antonyfaris.webp",
+          linkedInUrl: "https://www.linkedin.com/in/antony-faris/",
+        },
+      ],
     },
     {
       title: "Full Stack Developer",

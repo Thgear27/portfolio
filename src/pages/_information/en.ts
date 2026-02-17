@@ -68,6 +68,13 @@ export const experienceCopy: ExperienceCopy = {
       location: "Canada",
       description:
         "I leverage Large Language Models, modern web development, and Cloudflare Workers to architect intelligent, serverless solutions. I develop sophisticated file parsers and integrate AI capabilities to create scalable, high-performance applications that solve complex problems efficiently.",
+      workTeammates: [
+        {
+          name: "Antony Faris",
+          imgURL: "/imgs/antonyfaris.webp",
+          linkedInUrl: "https://www.linkedin.com/in/antony-faris/",
+        },
+      ],
     },
     {
       title: "Full Stack Developer",
