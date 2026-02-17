@@ -2,6 +2,7 @@ import ExternalLink from "@components/svgs/ExternalLink.astro";
 import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
 import AstroIcon from "@components/svgs/tech/AstroIcon.astro";
+import CloudflareIcon from "@components/svgs/tech/CloudflareIcon.astro";
 import CssIcon from "@components/svgs/tech/CssIcon.astro";
 import DenoIcon from "@components/svgs/tech/DenoIcon.astro";
 import DigitalOceanIcon from "@components/svgs/tech/DigitalOceanIcon.astro";
@@ -187,6 +188,10 @@ export const techStackCopy: TechStackCopy = {
         {
           name: "PostgreSQL",
           icon: PostgresIcon,
+        },
+        {
+          name: "Cloudflare",
+          icon: CloudflareIcon,
         },
       ],
     },
