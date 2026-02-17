@@ -249,9 +249,6 @@ export const techStackCopy: TechStackCopy = {
     {
       name: "Caddy",
     },
-    {
-      name: "Cloudflare",
-    },
   ],
   otherTechsTitle: "Other Techs",
   sectionParagraphs: [

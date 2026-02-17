@@ -250,9 +250,6 @@ export const techStackCopy: TechStackCopy = {
     {
       name: "Caddy",
     },
-    {
-      name: "Cloudflare",
-    },
   ],
   otherTechsTitle: "Otras tecnologías",
   sectionParagraphs: [
