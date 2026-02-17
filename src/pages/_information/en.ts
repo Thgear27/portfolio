@@ -144,10 +144,6 @@ export const techStackCopy: TechStackCopy = {
           name: "React",
           icon: ReactIcon,
         },
-        {
-          name: "Next.js",
-          icon: NextIcon,
-        },
       ],
     },
     {
