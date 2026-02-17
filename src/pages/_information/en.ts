@@ -67,7 +67,7 @@ export const experienceCopy: ExperienceCopy = {
       date: "Nov 2025 - Present",
       location: "Canada",
       description:
-        "I work with LLMs, web development, Cloudflare Workers, and file parsers to build scalable and efficient solutions.",
+        "I leverage Large Language Models, modern web development, and Cloudflare Workers to architect intelligent, serverless solutions. I develop sophisticated file parsers and integrate AI capabilities to create scalable, high-performance applications that solve complex problems efficiently.",
     },
     {
       title: "Full Stack Developer",

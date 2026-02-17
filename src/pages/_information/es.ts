@@ -67,7 +67,7 @@ export const experienceCopy: ExperienceCopy = {
       date: "Nov 2025 - Presente",
       location: "Canadá",
       description:
-        "Trabajo con LLMs, desarrollo web, Cloudflare Workers y parsers de archivos para construir soluciones escalables y eficientes.",
+        "Aprovecho Modelos de Lenguaje Grandes, desarrollo web moderno y Cloudflare Workers para arquitectar soluciones inteligentes y sin servidor. Desarrollo parsers de archivos sofisticados e integro capacidades de IA para crear aplicaciones escalables y de alto rendimiento que resuelven problemas complejos de manera eficiente.",
     },
     {
       title: "Full Stack Developer",
