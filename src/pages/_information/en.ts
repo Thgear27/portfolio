@@ -63,6 +63,14 @@ export const experienceCopy: ExperienceCopy = {
   jobs: [
     {
       title: "Full Stack Developer",
+      company: "Taskd",
+      date: "Nov 2025 - Present",
+      location: "Canada",
+      description:
+        "I work with LLMs, web development, Cloudflare Workers, and file parsers to build scalable and efficient solutions.",
+    },
+    {
+      title: "Full Stack Developer",
       company: "Akou",
       date: "Jul - Nov 2024",
       location: "London, UK",

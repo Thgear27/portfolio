@@ -63,6 +63,14 @@ export const experienceCopy: ExperienceCopy = {
   jobs: [
     {
       title: "Full Stack Developer",
+      company: "Taskd",
+      date: "Nov 2025 - Presente",
+      location: "Canadá",
+      description:
+        "Trabajo con LLMs, desarrollo web, Cloudflare Workers y parsers de archivos para construir soluciones escalables y eficientes.",
+    },
+    {
+      title: "Full Stack Developer",
       company: "Akou",
       date: "Jul - Nov 2024",
       location: "Londres, Reino Unido",
