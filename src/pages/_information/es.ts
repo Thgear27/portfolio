@@ -75,7 +75,7 @@ export const experienceCopy: ExperienceCopy = {
     {
       title: "Full Stack Developer",
       company: "Taskd",
-      date: "Nov 2025 - Presente",
+      date: "Dic 2025 - Presente",
       location: "Canadá",
       companyLogo: TaskdLogo,
       description:
