@@ -1,7 +1,9 @@
+// Svgs
 import ExternalLink from "@components/svgs/ExternalLink.astro";
 import GitHubLogo from "@components/svgs/social/GitHubLogo.astro";
 import LinkedInLogo from "@components/svgs/social/LinkedInLogo.astro";
 import AstroIcon from "@components/svgs/tech/AstroIcon.astro";
+import CloudflareIcon from "@components/svgs/tech/CloudflareIcon.astro";
 import CssIcon from "@components/svgs/tech/CssIcon.astro";
 import DenoIcon from "@components/svgs/tech/DenoIcon.astro";
 import DigitalOceanIcon from "@components/svgs/tech/DigitalOceanIcon.astro";
@@ -13,7 +15,6 @@ import GitIcon from "@components/svgs/tech/GitIcon.astro";
 import HtmlIcon from "@components/svgs/tech/HtmlIcon.astro";
 import JavascriptIcon from "@components/svgs/tech/JavascriptIcon.astro";
 import LinuxIcon from "@components/svgs/tech/LinuxIcon.astro";
-import NextIcon from "@components/svgs/tech/NextIcon.astro";
 import NodeIcon from "@components/svgs/tech/NodeIcon.astro";
 import PnpmIcon from "@components/svgs/tech/PnpmIcon.astro";
 import PostgresIcon from "@components/svgs/tech/PostgresIcon.astro";
@@ -23,6 +24,17 @@ import SvelteIcon from "@components/svgs/tech/SvelteIcon.astro";
 import TailwindIcon from "@components/svgs/tech/TailwindIcon.astro";
 import TypescriptIcon from "@components/svgs/tech/TypescriptIcon.astro";
 import VscodeIcon from "@components/svgs/tech/VscodeIcon.astro";
+import Tanstack from "@components/svgs/tech/Tanstack.astro";
+import Hono from "@components/svgs/tech/Hono.astro";
+import NextIcon from "@components/svgs/tech/NextIcon.astro";
+
+// Images
+import TaskdLogo from "@assets/companies/Taskd.png";
+import GlobantLogo from "@assets/companies/Globant.png";
+import AkouLogo from "@assets/companies/Akou.png";
+import ModularRocksLogo from "@assets/companies/ModularRocks.png";
+import ConeimeraLogo from "@assets/companies/Coneimera.png";
+
 import type {
   HeroCopy,
   ExperienceCopy,
@@ -59,13 +71,39 @@ export const email = "vegasfernando2003@gmail.com";
 export const experienceCopy: ExperienceCopy = {
   title: "Mi Experiencia",
   subtitle: "Donde he trabajado y colaborado",
-  collaboratedText: "~ colaboré con",
   jobs: [
+    {
+      title: "Full Stack Developer",
+      company: "Taskd",
+      date: "Nov 2025 - Presente",
+      location: "Canadá",
+      companyLogo: TaskdLogo,
+      description:
+        "Desarrollo soluciones full stack con Cloudflare, bases de datos y herramientas de IA. Diseño APIs, sistemas de autenticación y frontend, priorizando escalabilidad y rendimiento.",
+      collaboratedText: "~ colaborando con",
+      workTeammates: [
+        {
+          name: "Antony Faris",
+          imgURL: "/imgs/antonyfaris.webp",
+          linkedInUrl: "https://www.linkedin.com/in/antony-faris/",
+        },
+      ],
+    },
+    {
+      title: "Frontend Developer",
+      company: "Globant",
+      date: "Abr - Nov 2025",
+      location: "Arabia Saudita",
+      companyLogo: GlobantLogo,
+      description:
+        "Desarrollé funcionalidades frontend con Svelte y plataformas CMS para un proyecto internacional en Arabia Saudita. Implementé componentes reutilizables basados en diseños de Figma, asegurando consistencia visual y precisión pixel-perfect, además de trabajar en la lógica y estructura de páginas.",
+    },
     {
       title: "Full Stack Developer",
       company: "Akou",
       date: "Jul - Nov 2024",
       location: "Londres, Reino Unido",
+      companyLogo: AkouLogo,
       description:
         "Desarrollé diseños responsivos, menús dinámicos y autenticación segura, mejoré elementos de la interfaz de usuario e implementé un sistema de importación de CSV con validaciones, trabajando en colaboración con un diseñador.",
     },
@@ -74,8 +112,10 @@ export const experienceCopy: ExperienceCopy = {
       company: "Modular Rocks",
       date: "Nov 2023 - Nov 2024 ",
       location: "Londres, Reino Unido",
+      companyLogo: ModularRocksLogo,
       description:
         "Integré la API de GitHub, implementé autenticación segura con OAuth y utilicé SSR en Astro. También trabajé con AST para manipulación de código, escribí pruebas para asegurar la calidad e incorporé conceptos de diseño desde Figma.",
+      collaboratedText: "~ colaboré con",
       workTeammates: [
         {
           name: "Antony Faris",
@@ -94,6 +134,7 @@ export const experienceCopy: ExperienceCopy = {
       company: "Coneimera",
       date: "Nov 2023 - Nov 2024",
       location: "Lima, Perú",
+      companyLogo: ConeimeraLogo,
       description:
         "Diseñé el sitio web de XXX - CONEIMERA, construí un backend seguro con RLS en Supabase, integré una pasarela de pagos y desarrollé un panel de administración para gestionar registros y pagos.",
     },
@@ -138,6 +179,10 @@ export const techStackCopy: TechStackCopy = {
           icon: AstroIcon,
         },
         {
+          name: "Next.js",
+          icon: NextIcon,
+        },
+        {
           name: "Svelte",
           icon: SvelteIcon,
         },
@@ -145,15 +190,15 @@ export const techStackCopy: TechStackCopy = {
           name: "React",
           icon: ReactIcon,
         },
-        {
-          name: "Next.js",
-          icon: NextIcon,
-        },
       ],
     },
     {
       title: "Backend",
       techs: [
+        {
+          name: "Cloudflare",
+          icon: CloudflareIcon,
+        },
         {
           name: "Node.js",
           icon: NodeIcon,
@@ -161,6 +206,14 @@ export const techStackCopy: TechStackCopy = {
         {
           name: "Deno",
           icon: DenoIcon,
+        },
+        {
+          name: "TanStack",
+          icon: Tanstack,
+        },
+        {
+          name: "Hono",
+          icon: Hono,
         },
         {
           name: "Express",
@@ -233,9 +286,6 @@ export const techStackCopy: TechStackCopy = {
     },
     {
       name: "Caddy",
-    },
-    {
-      name: "Cloudflare",
     },
   ],
   otherTechsTitle: "Otras tecnologías",
