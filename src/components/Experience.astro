@@ -3,6 +3,7 @@ import Briefcase from "./svgs/Briefcase.astro";
 import SectionTitle from "./ui/SectionTitle.astro";
 import LinkedInLogoCircle from "./svgs/social/LinkedInLogoCircle.astro";
 import type { ExperienceCopy } from "./types";
+import { Image } from "astro:assets";
 
 type Props = {
   experienceCopy: ExperienceCopy;
@@ -21,22 +22,28 @@ const { jobs, title, subtitle } = experienceCopy;
         jobs.map((job, index) => (
           <>
             <div class="job">
-              <div>
-                <div class="job-title">
+              <div class="job-company">
+                {job.companyLogo ? (
+                  <Image class={"job-company-logo"} src={job.companyLogo} alt={`${job.company} logo`} />
+                ) : (
                   <Briefcase />
-                  <h3>
-                    {job.title}, <span class="gradient">{job.company}</span>
-                  </h3>
+                )}
+                <div>
+                  <div class="job-title">
+                    <h3>
+                      {job.title}, <span class="gradient">{job.company}</span>
+                    </h3>
+                  </div>
+                  <p class="job-start-end">
+                    {job.date} / {job.location}
+                  </p>
                 </div>
-                <p class="job-start-end">
-                  {job.date} / {job.location}
-                </p>
               </div>
               <div class="job-description">
                 <p>{job.description}</p>
                 {job.workTeammates && (
                   <>
-                    <span class="italic">{experienceCopy.collaboratedText}</span>
+                    <span class="italic">{job.collaboratedText}</span>
                     <div class="profile-photos">
                       {job.workTeammates.map((teammate) => (
                         <a href={teammate.linkedInUrl} target="_blank">
@@ -79,11 +86,23 @@ const { jobs, title, subtitle } = experienceCopy;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-block: 24px;
+    gap: 1rem;
+  }
+
+  .job-company {
+    display: flex;
+    align-items: center;
+    height: min-content;
+    gap: 1.5rem;
+  }
+
+  .job-company-logo {
+    width: 60px;
+    height: auto;
   }
 
   .job-title {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
     margin-bottom: 1rem;
   }
@@ -164,6 +183,18 @@ const { jobs, title, subtitle } = experienceCopy;
     .job {
       grid-template-columns: 1fr;
       gap: 1rem;
+      padding-block: 3rem;
+    }
+
+    .job-company {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .job-company-logo {
+      width: auto;
+      height: 40px;
     }
   }
 </style>

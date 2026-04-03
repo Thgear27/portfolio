@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type NavbarOption = {
   label: string;
   href: string;
@@ -7,19 +9,34 @@ export type NavbarOption = {
 
 export type SocialLink = { label: string; href: string; icon: (_props: Record<string, any>) => any; target?: string };
 
-export type JobInfo = {
+export type WorkTeammate = {
+  name: string;
+  imgURL: string;
+  linkedInUrl: string;
+};
+
+type JobInfoBase = {
   title: string;
   company: string;
+  companyLogo?: ImageMetadata;
   date: string;
   location: string;
   description: string;
-  workTeammates?: { name: string; imgURL: string; linkedInUrl: string }[];
 };
+
+export type JobInfo =
+  | (JobInfoBase & {
+      workTeammates: WorkTeammate[];
+      collaboratedText: string;
+    })
+  | (JobInfoBase & {
+      workTeammates?: undefined;
+      collaboratedText?: undefined;
+    });
 
 export type ExperienceCopy = {
   title: string;
   subtitle: string;
-  collaboratedText: string;
   jobs: JobInfo[];
 };
 
